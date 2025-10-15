@@ -1,10 +1,14 @@
-# Aplikasi Web "XYZ"
+# Aplikasi Web "HomeBox"
 
 
 ## Sekilas Tentang
 
-Deskripsi singkat tentang aplikasi tsb.
-
+HomeBox adalah sebuah aplikasi web berbasis self-hosted yang digunakan untuk melakukan inventarisasi dan manajemen aset secara terpusat. Aplikasi ini memungkinkan pengguna untuk mencatat, mengelompokkan, dan memantau berbagai barang yang dimiliki, baik untuk keperluan pribadi, rumah tangga, maupun organisasi. Beberapa fitur yang dimiliki oleh HomeBox adalah sebagai berikut:
+1. Pencatatan data aset, meliputi nama, deskripsi, kategori, lokasi penyimpanan, dan kondisi barang.
+2. Manajemen kategori dan lokasi, yang memudahkan pengelompokan barang sesuai jenis atau tempat penyimpanannya.
+3. Dukungan unggah gambar, sehingga setiap item dapat disertai foto sebagai identifikasi visual.
+4. Pencarian dan penyaringan data, untuk mempermudah pengguna dalam menemukan barang tertentu.
+5. Akses berbasis web, sehingga dapat dijalankan melalui peramban (browser) tanpa memerlukan instalasi tambahan di sisi pengguna.
 
 ## Instalasi
 
