@@ -44,6 +44,125 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 
 ## Cara Pemakaian
 
+### Akses Aplikasi
+- Buka browser, lalu masuk ke alamat server HomeBox.
+  [HomeBox Kelompok 6](http://145.79.13.5:7745).
+  <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/bcbb6c9f-7f28-429f-a633-abdcdbd5a848" />
+  
+### Login
+- Masukkan *username* dan *password* yang sudah terdaftar.
+  <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/8dd4c65d-33a6-491e-ad11-1337db5fc1f4" />
+- Setelah berhasil login, pengguna akan diarahkan ke halaman Beranda.
+  
+### Beranda (Dashboard)
+- Menampilkan ringkasan data: *Total Nilai Barang, Jumlah Item, Jumlah Lokasi, dan Jumlah Label*.
+  <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/7ad54725-d9f8-4924-88c3-cc8fcfe672fb" />
+- Tombol **"+ Buat"** digunakan untuk menambah item baru.
+  <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/9cf700b2-1d56-4f9d-a341-2c849b9d7792" />
+  
+### Menambahkan Item Baru
+- Klik tombol **"+ Buat"**, lalu pilih **"Item/Aset"**.
+- Isi semua kolom yang tersedia:
+  - **Lokasi Induk** -> pilih lokasi penyimpanan barang.
+  - **Nama Item** -> isi nama barang.
+  - **Item Quantity** -> jumlah barang.
+  - **Deskripsi Item** -> keterangan barang.
+  - **Label** -> pilih kategori barang.
+  - **Item Photo** -> unggah foto barang (opsional).
+- Gunakan salah satu tombol di bawah form:
+  - **Buat** -> simpan dan tutup form.
+  - **Buat dan Tambah Baru** -> simpan dan lanjut isi data baru.
+  - **Shift + Enter** -> shortcut keyboard untuk tambah data cepat.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/4440be7c-4bca-41a3-b61d-6e35edf92943" />
+
+### Menambahkan Lokasi Baru
+- Klik tombol **"+ Buat"**, lalu pilih **"Lokasi"**.
+- Isi kolom:
+  - **Lokasi Induk** -> jika lokasi berada di dalam lokasi lain (opsional).
+  - **Nama Lokasi** -> isi nama lokasi, contoh: *Bedroom*, *Office*.
+  - **Deskripsi Lokasi** -> keterangan lokasi (opsional).
+- Klik tombol **Buat** atau **Buat dan Tambah Baru** untuk menyimpan.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/27f581e4-cb68-4835-8737-82ece919e7a9" />
+
+### Menambahkan Label Baru
+- Klik tombol **"+ Buat"**, lalu pilih **"Label"**.
+- Isi data:
+  - **Nama Label** -> isi nama label, contoh: *Electronics*.
+  - **Deskripsi / Keterangan Label** -> keterangan label (opsional).
+  - **Label Color** -> pilih warna label agar mudah dibedakan.
+- Klik **Buat** untuk menyimpan label baru.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/b72e3b01-9f6f-4be9-9474-93e6bb1f5d44" />
+
+### Melihat & Mengelola Barang di Setiap Lokasi
+- Setelah membuat lokasi, semua daftar tempat penyimpanan akan tampil di menu **"Lokasi"**.
+  <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/137195bf-6d15-4e2f-bca6-d832eb25536a" />
+- Tiap Lokasi bisa diklik untuk melihat atau menambahkan item di dalamnya.
+- Setelah memilih salah satu lokasi (misal *Bedroom*), pengguna akan diarahkan ke halaman berisi daftar barang yang tersimpan di lokasi tersebut.
+- Setiap item ditampilkan dalam bentuk kartu berisi **nama, deskripsi, label, dan foto barang**.
+- Di bagian atas halaman terdapat tombol:
+  - **Labels** -> untuk mengatur label atau kategori barang di lokasi tersebut.
+  - **Sunting** -> untuk mengedit detail lokasi seperti nama dan deskripsi.
+  - **Hapus** -> untuk menghapus lokasi beserta isinya.
+  - **Kartu / Tabel** -> untuk mengganti tampilan daftar barang (mode kartu / tabel).
+- Fitur ini memudahkan pengguna melacak dan mengatur barang berdasarkan lokasi penyimpanan.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/defb85b6-5a15-49a6-bc32-ee771df66143" />
+
+### Melihat dan Mengelola Detail Barang
+- Klik salah satu item di dalam lokasi (misal *Tempat Tidur* di *Bedroom*) untuk melihat detailnya.
+- Halaman ini menampilkan informasi lengkap seperti:
+  **Nama Barang**, **Lokasi**, **Label**, dan **Deskripsi**.
+- Di bawah deskripsi terdapat 3 tab utama:
+  - **Detail** -> menampilkan informasi rinci seperti jumlah barang, nomor seri, model, hingga harga (jika diisi).
+  - **Perbaikan** -> menampilkan daftar kegiatan pemeliharaan yang pernah dilakukan terhadap barang tersebut.
+  - **Sunting** -> digunakan untuk mengedit data barang seperti nama, deskripsi, jumlah, lokasi, dan label.
+- Pada bagian atas juga tersedia tombol:
+  - **Labels** -> melihat label yang digunakan untuk item tersebut.
+  - **Create Subitem** -> menambahkan barang turunan (misal *Bantal*).
+  - **Duplikat** -> membuat salinan item dengan data yang sama.
+  - **Hapus** -> menghapus item dari daftar.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdb40fec-e933-421a-a63d-7ac151ba27af" />
+
+### Mencari Barang
+- Gunakan kolom **"Cari"** di bagian atas halaman untuk menemukan barang berdasarkan nama, label, atau lokasi.
+- Ketik kata kunci dan hasil akan langsung ditampilkan.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/d2b4f761-3c58-4170-9ed1-60dc02c78f39" />
+
+### Pemeliharaan Barang
+- Fitur **Pemeliharaan** digunakan untuk mencatat dan memantau kegiatan perawatan atau perbaikan barang.
+- Untuk menambahkan pemeliharaan baru:
+  1. Buka halaman **Detail Barang**.
+  2. Klik tab **Perbaikan**.
+  3. Tekan tombol **+ Baru** di pojok kanan atas.
+- Isi data yang tersedia:
+  - **Nama Entri** -> nama kegiatan perawatan (misal: *Ganti sprei*).
+  - **Tanggal Terjadwal** -> jadwal perawatan direncanakan.
+  - **Tanggal Selesai** -> waktu perawatan selesai dilakukan.
+  - **Catatan** -> deskripsi detail kegiatan.
+  - **Biaya** -> nominal biaya jika ada pengeluaran.
+- Setelah disimpan, daftar pemeliharaan akan muncul di tab **Pemeliharaan**.
+- Fitur ini membantu pengguna melacak kondisi dan riwayat perawatan barang dengan mudah.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/28e34c66-295f-4d6f-87d4-34f528e5f209" />
+
+### Profil dan Pengaturan
+- Buka menu **Profil** di sidebar kiri untuk melihat informasi akun.
+- Pengguna bisa memperbarui nama atau kata sandi bila diperlukan.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/da757803-bf19-48fb-b961-c341c503b6ea" />
+
+### Tools (Laporan & Utilitas)
+- Menu **Tools** berfungsi untuk memmbantu pengguna dalam mengelola data inventaris secara lebih luas.
+- Di dalam menu ini terdapat beberapa fitur pendukung seperti:
+  - **Laporan Inventaris** -> menampilkan rekapitulasi barang berdasarkan lokasi, label, atau kategori tertentu.
+  - **Ekspor Data** -> memungkinkan pengguna mengunduh data inventaris dalam format tertentu (misal CSV atau JSON) untuk keperluan backup atau analisis.
+  - **Impor Data** -> digunakan untuk menambahkan data barang secara massal dari file yang sudah ada.
+- Fitur ini sangat berguna untuk pengelolaan data dalam jumlah besar atau saat pengguna ingin membuat arsip data HomeBox secara lokal.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/83c5aea0-71c4-48b7-b6d3-6a394c10bd1e" />
+
+### Logout
+- Setelah selesai menggunakan aplikasi, klik **"Keluar"** di bagian bawah sidebar kiri.
+- Langkah ini penting untuk menjaga keamanan akun.
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/7718e8eb-4438-4ba5-bd62-4661a2005613" />
+
+
 - Tampilan aplikasi web
 - Fungsi-fungsi utama
 - Isi dengan data real/dummy (jangan kosongan) dan sertakan beberapa screenshot
