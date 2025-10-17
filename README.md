@@ -35,7 +35,7 @@ services:
       - HBOX_LOG_LEVEL=info
       - HBOX_LOG_FORMAT=text
       - HBOX_WEB_MAX_UPLOAD_SIZE=25
-      - HBOX_OPTIONS_ALLOW_REGISTRATION=true # Catatan: Di screenshot ini nilainya true
+      - HBOX_OPTIONS_ALLOW_REGISTRATION=true
       - HBOX_WEB_READ_TIMEOUT=15s
       - HBOX_WEB_WRITE_TIMEOUT=15s
       - HBOX_WEB_IDLE_TIMEOUT=60s
@@ -44,17 +44,43 @@ services:
       - HBOX_THUMBNAIL_HEIGHT=400
       - HBOX_OPTIONS_GITHUB_RELEASE_CHECK=true
 ```
-Variable dan configuration environment tersebut dapat dilihat pada: https://homebox.software/en/configure/
-Setting server tambahan yang diperlukan untuk meningkatkan fungsi dan kinerja aplikasi, misalnya:
-- batas upload file
-- batas memori
-- dll
-
-Plugin untuk fungsi tambahan
-- login dengan Google/Facebook
-- editor Markdown
-- dll
-
+Variable dan configuration environment yang dapat diatur untuk aplikasi HomeBox tersebut dapat dilihat pada: https://homebox.software/en/configure/. Adapun penjelasan untuk pengaturan tersebut adalah sebagai berikut:
+```
+TZ=Asia/Jakarta
+```
+Menetapkan zona waktu server ke Waktu Indonesia Barat (WIB) agar memastikan timestamp pada semua data, log, dan catatan aktivitas di aplikasi HomeBox akurat sesuai waktu lokal.
+```
+HBOX_LOG_LEVEL=info
+```
+Mengatur tingkat logging yang efisien, menyeimbangkan detail dan penggunaan disk.
+```
+HBOX_LOG_FORMAT=text
+```
+Menentukan format output dari log aplikasi sehingga mudah dibaca dan dianalisis secara langsung di terminal.
+```
+HBOX_WEB_MAX_UPLOAD_SIZE=25
+```
+Membatasi ukuran file upload maksimum menjadi 25 MB, menghemat ruang disk.
+```
+HBOX_OPTIONS_ALLOW_REGISTRATION=true
+```
+Mengizinkan pendaftaran akun oleh publik.
+```
+HBOX_WEB_READ_TIMEOUT=15s
+HBOX_WEB_WRITE_TIMEOUT=15s
+HBOX_WEB_IDLE_TIMEOUT=60s
+```
+Meningkatkan stabilitas dengan memutus koneksi klien yang lambat membaca/mengirim permintaan setelah 15 detik dan juga membebaskan resource server dengan menutup koneksi yang tidak aktif (idle) setelah 60 detik.
+```
+HBOX_THUMBNAIL_ENABLED=true
+HBOX_THUMBNAIL_WIDTH=400
+HBOX_THUMBNAIL_HEIGHT=400
+```
+Mengaktifkan pembuatan thumbnail untuk gambar, meningkatkan UX dan kecepatan loading dengan menetapkan resolusi thumbnail sebesar 400x400 pixel.
+```
+HBOX_OPTIONS_GITHUB_RELEASE_CHECK=true
+```
+Memberi notifikasi otomatis di web interface jika ada pembaruan versi baru.
 
 ##  Maintenance (opsional)
 
