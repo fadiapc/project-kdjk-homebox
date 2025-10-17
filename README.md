@@ -12,8 +12,62 @@ HomeBox adalah sebuah aplikasi web berbasis self-hosted yang digunakan untuk mel
 
 ## Instalasi
 
-- Prasyarat, apa saja yang harus diinstal sebelumnya.
-- Langkah instalasi dalam CLI.
+**1. Download Homebox**
+
+Buka halaman GitHub Homebox: https://github.com/sysadminsmedia/homebox. 
+
+Klik tombol "Code" -> Klik "Download ZIP" untuk mengunduh folder ZIP homebox.
+<img width="1897" height="869" alt="image" src="https://github.com/user-attachments/assets/8ed24459-1a61-44ab-9f95-019847962b3b" />
+
+Ekstrak file ZIP tersebut di komputer kamu (misal di folder Downloads/homebox/).
+
+
+**2. Install Docker**
+
+*Jika di Windows atau macOS:*
+
+- Unduh Docker Desktop dari https://www.docker.com/products/docker-desktop/
+
+- Pilih sistem operasi yang didukung
+<img width="1896" height="823" alt="image" src="https://github.com/user-attachments/assets/d4866863-7ff6-4ad6-a9c4-bbe8fd9acac2" />
+
+- Jalankan instalasi, lalu buka Docker Desktop setelah selesai.
+
+*Jika di Linux :*
+
+Kamu bisa pilih salah satu cara berikut:
+
+- Download Docker Desktop for Linux dari situs resminya (fitur GUI, sama seperti di Windows/macOS).
+
+Atau 
+
+- Install langsung dari terminal:
+
+```sudo apt update
+sudo apt install docker.io docker-compose -y
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+Cek apakah Docker sudah aktif:
+
+```
+docker --version
+docker compose version
+```
+
+**4. Buat Folder Data Homebox**
+
+Buka terminal (atau PowerShell) lalu jalankan:
+
+```mkdir -p ~/homebox-data
+```
+
+**5. Buat File docker-compose.yml**
+
+**6. Jalankan Aplikasi Secara Lokal (Testing)**
+
+**7. Deploy ke Server**
 
 
 ## Konfigurasi
