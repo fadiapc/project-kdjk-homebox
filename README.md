@@ -12,36 +12,41 @@ HomeBox adalah sebuah aplikasi web berbasis self-hosted yang digunakan untuk mel
 
 ## Instalasi
 
+**Persiapan :**
+- Sistem operasi: Windows / macOS / Linux (disarankan Ubuntu 22.04).
+
+- Perangkat lunak: Docker & Docker Compose.
+
+- Akses: Terminal/CLI dan koneksi internet.
+
+- Server: Hostinger VPS dengan akses root/SSH aktif dan port 3100 terbuka.
+
+- (Opsional): FileZilla, WinSCP, atau File Manager di hPanel (Hostinger).
+
 **1. Download Homebox**
 
-Buka halaman GitHub Homebox: https://github.com/sysadminsmedia/homebox. 
-
-Klik tombol "Code" -> Klik "Download ZIP" untuk mengunduh folder ZIP homebox.
+1. Buka halaman GitHub Homebox: https://github.com/sysadminsmedia/homebox. 
+2. Klik tombol "Code" lalu klik "Download ZIP" untuk mengunduh folder ZIP homebox.
 <img width="1897" height="869" alt="image" src="https://github.com/user-attachments/assets/8ed24459-1a61-44ab-9f95-019847962b3b" />
 
-Ekstrak file ZIP tersebut di komputer kamu (misal di folder Downloads/homebox/).
-
+3. Ekstrak file ZIP tersebut di komputer kamu (misal di folder Downloads/homebox/).
 
 **2. Install Docker**
 
 *Jika di Windows atau macOS:*
 
-- Unduh Docker Desktop dari https://www.docker.com/products/docker-desktop/
+- Unduh Docker Desktop dari https://www.docker.com/products/docker-desktop/.
 
-- Pilih sistem operasi yang didukung
+- Pilih sistem operasi yang didukung.
 <img width="1896" height="823" alt="image" src="https://github.com/user-attachments/assets/d4866863-7ff6-4ad6-a9c4-bbe8fd9acac2" />
 
 - Jalankan instalasi, lalu buka Docker Desktop setelah selesai.
 
 *Jika di Linux :*
 
-Kamu bisa pilih salah satu cara berikut:
+**Opsi 1:** Download Docker Desktop for Linux dari situs resminya (fitur GUI, sama seperti Windows/macOS).
 
-- Download Docker Desktop for Linux dari situs resminya (fitur GUI, sama seperti di Windows/macOS).
-
-Atau 
-
-- Install langsung dari terminal:
+**Opsi 2:** Install langsung dari terminal:
 
 ```sudo apt update
 sudo apt install docker.io docker-compose -y
@@ -60,18 +65,13 @@ docker compose version
 
 Buka terminal (atau PowerShell) lalu jalankan:
 
-```mkdir -p ~/homebox-data
+```
+mkdir -p ~/homebox-data
 ```
 
 **5. Buat File docker-compose.yml**
 
-**6. Jalankan Aplikasi Secara Lokal (Testing)**
-
-**7. Deploy ke Server**
-
-
-## Konfigurasi
-Berikut adalah isi dari file `docker-compose.yml`:
+Masuk ke folder hasil ekstrak Homebox, lalu buat file bernama docker-compose.yml dan isi dengan:
 
 ```yaml
 version:
@@ -98,7 +98,82 @@ services:
       - HBOX_THUMBNAIL_HEIGHT=400
       - HBOX_OPTIONS_GITHUB_RELEASE_CHECK=true
 ```
+
+**6. Jalankan Aplikasi dan Testing Secara Lokal**
+
+1. Masih di folder tempat file docker-compose.yml disimpan, jalankan:
+
+```
+docker compose up -d --build
+```
+
+2. Cek apakah container aktif:
+
+```
+docker ps
+```
+
+3. Jika homebox muncul → akses melalui: http://localhost:3100/.
+
+**7. Deploy ke Server**
+
+1. Login ke VPS:
+```
+ssh root@<IP_SERVER>
+```
+> Keterangan:
+> - Di Hostinger, kamu bisa melihat IP server di HPanel → VPS → Dashboard → “Server details” / “IP Address”.
+Contoh: 145.xx.xx.x
+> - Username default biasanya root (kecuali kamu buat user lain).*
+
+2. Masukkan Password VPS.
+
+3. Update & Install Docker:
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install docker.io docker-compose -y
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+4. Upload Folder Homebox ke Server
+
+- Kamu bisa unggah folder proyek ke server Hostinger lewat File Manager di hPanel, SSH langsung, atau FTP/SFTP (FileZilla/WinSCP). Pastikan folder ada di /root/homebox/ sebelum lanjut ke proses build Docker.
+
+5. Build dan Jalankan:
+```
+docker compose up -d --build
+```
+
+6. Cek Container:
+```
+docker ps
+```
+
+7. (Opsional) Izinkan Firewall:
+```
+sudo ufw allow 3100/tcp
+sudo ufw reload
+```
+
+**7. Akses Web App**
+
+1. Buka browser, lalu ketik:
+
+```
+http://<IP_SERVER>:xxxx
+```
+
+Contoh:
+```
+http://145.79.13.5:7745
+```
+
+## Konfigurasi
+
 Variable dan configuration environment yang dapat diatur untuk aplikasi HomeBox tersebut dapat dilihat pada: https://homebox.software/en/configure/. Adapun penjelasan untuk pengaturan tersebut adalah sebagai berikut:
+
+Berdasarkan isi dari file `docker-compose.yml`
+
 ```
 TZ=Asia/Jakarta
 ```
@@ -147,38 +222,6 @@ Setting tambahan untuk maintenance secara periodik, misalnya:
 ## Otomatisasi (opsional)
 
 Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
-
-**1. Instalasi Docker atau Melakukan Pengecekan Instalasi Docker**
-```
-if ! command -v docker &> /dev/null
-then
-    echo "Docker belum terinstal."
-    sudo apt update
-    sudo apt install -y docker.io docker-compose
-    sudo usermod -aG docker $(whoami)
-    echo "Keluar dan masuk kembali ke SSH agar 'docker' aktif!"
-else
-    echo "Docker dan Docker Compose sudah terinstal."
-fi
-
-mkdir -p $HOST_DIR
-cd $HOST_DIR
-```
-
-**2. Konfigurasi**
-Konfigurasi dapat dilakukan dengan kode sebelumnya, pada sub bab "konfigurasi". 
-
-**3. Membersihkan kontainer, volume, dan jaringan docker yang tidak digunakan**
-```
-docker system prune -a -v -f
-```
-
-**4. Membersihkan images docker yang tidak digunakan**
-```
-docker image prune -a -f
-```
-
-
 
 
 ## Cara Pemakaian
