@@ -155,17 +155,12 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
   - **Ekspor Data** -> memungkinkan pengguna mengunduh data inventaris dalam format tertentu (misal CSV atau JSON) untuk keperluan backup atau analisis.
   - **Impor Data** -> digunakan untuk menambahkan data barang secara massal dari file yang sudah ada.
 - Fitur ini sangat berguna untuk pengelolaan data dalam jumlah besar atau saat pengguna ingin membuat arsip data HomeBox secara lokal.
-<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/83c5aea0-71c4-48b7-b6d3-6a394c10bd1e" />
+<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/32ec1f8c-e8d3-4baa-991c-3aa7232a378b" />
 
 ### Logout
 - Setelah selesai menggunakan aplikasi, klik **"Keluar"** di bagian bawah sidebar kiri.
 - Langkah ini penting untuk menjaga keamanan akun.
 <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/7718e8eb-4438-4ba5-bd62-4661a2005613" />
-
-
-- Tampilan aplikasi web
-- Fungsi-fungsi utama
-- Isi dengan data real/dummy (jangan kosongan) dan sertakan beberapa screenshot
 
 
 ## Pembahasan
