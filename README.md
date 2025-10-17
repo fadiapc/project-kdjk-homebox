@@ -16,8 +16,35 @@ HomeBox adalah sebuah aplikasi web berbasis self-hosted yang digunakan untuk mel
 - Langkah instalasi dalam CLI.
 
 
-## Konfigurasi (opsional)
+## Konfigurasi
+Berikut adalah isi dari file `docker-compose.yml`:
 
+```yaml
+version:
+services:
+  homebox:
+    image: ghcr.io/sysadminsmedia/homebox:latest
+    container_name: homebox
+    restart: unless-stopped
+    ports:
+      - "7745:7745"
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=Asia/Jakarta
+      - HBOX_LOG_LEVEL=info
+      - HBOX_LOG_FORMAT=text
+      - HBOX_WEB_MAX_UPLOAD_SIZE=25
+      - HBOX_OPTIONS_ALLOW_REGISTRATION=true # Catatan: Di screenshot ini nilainya true
+      - HBOX_WEB_READ_TIMEOUT=15s
+      - HBOX_WEB_WRITE_TIMEOUT=15s
+      - HBOX_WEB_IDLE_TIMEOUT=60s
+      - HBOX_THUMBNAIL_ENABLED=true
+      - HBOX_THUMBNAIL_WIDTH=400
+      - HBOX_THUMBNAIL_HEIGHT=400
+      - HBOX_OPTIONS_GITHUB_RELEASE_CHECK=true
+```
+Variable dan configuration environment tersebut dapat dilihat pada: https://homebox.software/en/configure/
 Setting server tambahan yang diperlukan untuk meningkatkan fungsi dan kinerja aplikasi, misalnya:
 - batas upload file
 - batas memori
