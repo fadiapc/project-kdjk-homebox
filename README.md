@@ -140,14 +140,23 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
   **Nama Barang**, **Lokasi**, **Label**, dan **Deskripsi**.
 - Di bawah deskripsi terdapat 3 tab utama:
   - **Detail** -> menampilkan informasi rinci seperti jumlah barang, nomor seri, model, hingga harga (jika diisi).
+    <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/931b0e96-1bc2-4b33-9b0b-b0f80895e1cc" />
   - **Perbaikan** -> menampilkan daftar kegiatan pemeliharaan yang pernah dilakukan terhadap barang tersebut.
+    <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/91bcb679-eef1-41ca-a71c-c54530cb6ac5" />
   - **Sunting** -> digunakan untuk mengedit data barang seperti nama, deskripsi, jumlah, lokasi, dan label.
+    <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/6a415e50-2d28-4330-851c-bf5e5d97f6e8" />
+    - Saat membuka tab **Sunting**, pengguna bisa memperbarui informasi dasar barang.
+    - Jika mengaktifkan opsi **Tingkat Lanjut**, akan muncul kolom tambahan yang bisa diisi, seperti:
+      - **Biaya Pembelian** -> harga saat barang dibeli.
+      - **Rincian Garansi** -> masa garansi dan informasi penyedia garansi.
+      - **Detail Penjualan** -> data transaksi jika barang dijual kembali.
+      <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/54e155da-c5b6-415e-9c41-bcde8fe2aa71" />
+      <img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/13f588de-7ca7-448f-b9f2-cb9ca195e15a" />
 - Pada bagian atas juga tersedia tombol:
   - **Labels** -> melihat label yang digunakan untuk item tersebut.
   - **Create Subitem** -> menambahkan barang turunan (misal *Bantal*).
   - **Duplikat** -> membuat salinan item dengan data yang sama.
   - **Hapus** -> menghapus item dari daftar.
-<img width="800" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdb40fec-e933-421a-a63d-7ac151ba27af" />
 
 ### Mencari Barang
 - Gunakan kolom **"Cari"** di bagian atas halaman untuk menemukan barang berdasarkan nama, label, atau lokasi.
