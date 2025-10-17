@@ -165,10 +165,53 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 
 ## Pembahasan
 
-- Pendapat anda tentang aplikasi web ini
-    - kelebihan
-    - kekurangan
-- Bandingkan dengan aplikasi web lain yang sejenis
+### Informasi Terkait Homebox
+Homebox adalah aplikasi web self-hosted berbasis open source yang berfungsi untuk mengelola dan mendokumentasikan inventori pribadi. Aplikasi ini memungkinkan pengguna menyimpan informasi barang-barang yang dimiliki di rumah, kantor, atau gudang secara digital, sehingga mempermudah pelacakan dan pengelolaan aset.
+
+Homebox dikembangkan oleh SysAdmins Media, dan dapat dijalankan menggunakan Docker sehingga instalasi menjadi lebih cepat, ringan, dan mudah di-maintain tanpa konfigurasi server yang rumit. Aplikasi ini berjalan sebagai layanan tunggal (single container) yang diakses melalui browser.
+
+### Kelebihan Homebox
+1. **Proses instalasi sangat mudah** : 
+Homebox dapat dijalankan hanya dengan satu perintah menggunakan Docker, yaitu docker compose up -d. Pengguna tidak perlu melakukan konfigurasi server, database, maupun dependensi secara manual. Hal ini membuatnya cocok untuk pemula yang ingin mencoba aplikasi self-hosted.
+
+2. **Tampilan antarmuka sederhana dan mudah digunakan** : 
+Desain Homebox bersifat minimalis namun intuitif. Setiap fitur ditempatkan dengan rapi, sehingga pengguna baru dapat langsung memahami cara menambah dan mengelola barang tanpa perlu panduan rumit.
+
+3. **Performa aplikasi cepat dan ringan** : 
+Karena dibangun menggunakan bahasa pemrograman Golang, Homebox mampu berjalan dengan efisien bahkan pada perangkat dengan spesifikasi rendah. Aplikasi juga tetap responsif saat digunakan untuk menyimpan banyak data inventori.
+
+4. **Fitur inti cukup lengkap untuk kebutuhan dasar** : 
+Homebox sudah mencakup semua fungsi penting seperti menambah, mengedit, menghapus, dan mencari barang. Tersedia pula fitur kategori, lokasi, serta dukungan unggah gambar untuk setiap item.
+
+5. **Dapat dijalankan di berbagai platform** : 
+Karena berbasis Docker, Homebox bisa diinstal di Windows, macOS, Linux, maupun di server cloud tanpa perlu menyesuaikan sistem operasi.
+
+### Kekurangan Homebox
+1. **Membutuhkan koneksi internet saat instalasi pertama** : 
+Image Docker Homebox harus diunduh dari Docker Hub. Jadi, tanpa koneksi internet, proses instalasi awal tidak bisa dilakukan.
+
+2. **Desain antarmuka masih sederhana** : 
+Walaupun mudah digunakan, tampilannya belum memiliki elemen visual modern seperti grafik statistik atau panel analisis data yang menarik.
+
+3. **Belum mendukung ekspor data ke format lain** :
+Saat ini Homebox belum menyediakan fitur bawaan untuk mengekspor data inventori ke format seperti CSV atau Excel. Backup hanya bisa dilakukan secara manual dari folder data.
+
+4. **Dokumentasi resmi terbatas** :
+Panduan instalasi dan penggunaannya di dokumentasi resmi masih singkat, sehingga pengguna mungkin perlu mencari referensi tambahan dari komunitas GitHub atau forum lain.
+
+5. **Tidak ada sistem notifikasi atau pengingat** :
+Aplikasi belum mendukung fitur seperti pengingat perawatan barang, masa garansi, atau stok menipis. Fitur yang mungkin berguna untuk inventori yang lebih kompleks.
+
+6. **Tidak ada sistem multi peran pengguna** :
+Walaupun sudah mendukung login, Homebox belum memiliki pembagian peran seperti admin dan user biasa. Semua pengguna memiliki akses yang sama terhadap data inventori.
+
+### Perbandingan Homebox dengan aplikasi web lain yang sejenis
+1. **Homebox vs Grocy**
+   - **Kelebihan Homebox**: Lebih sederhana dan ringan serta tidak banyak konfigurasi kompleks. Cocok untuk penggunaan pribadi atau rumah tangga yang hanya butuh mencatat barang, kategori, lokasi, gambar, tanpa banyak fitur tambahan. Homebox juga hanya instalasi dengan Docker sehingga lebih cepat dan mudah.
+   - **Kelebihan Grocy**: Fitur lebih banyak dan teliti untuk kebutuhan yang lebih kompleks. Jika membutuhkan manajemen stok bahan makanan atau alat yang perlu perawatan rutin, Grocy lebih unggul.
+2. **Homebox vs InvenTree**
+   - **Kelebihan Homebox**: Lebih simpel dan lebih cepat di setup serta tampilannya lebih ringan dan lebih cocok untuk penggunaan pribadi/rumah yang tidak butuh modul kompleks; pemeliharaan (maintenance) lebih mudah karena sedikit dependensi dan fungsi.
+   - **Kelebihan InvenTree**: Lebih cocok jika butuh fitur lanjutan seperti pelacakan supplier dan pelacakan batch atau serial. InvenTree juga memiliki laporan yang mendalam, kontrol peran pengguna, serta integrasi lebih banyak. Jika membutuhkan inventori dengan skala besar atau butuh kontrol yang lebih presisi, InvenTree lebih powerful.
 
 
 ## Referensi
