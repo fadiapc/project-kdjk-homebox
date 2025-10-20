@@ -21,7 +21,9 @@ HomeBox adalah sebuah aplikasi web berbasis self-hosted yang digunakan untuk mel
 
 - Server: Hostinger VPS dengan akses root/SSH aktif dan port 3100 terbuka.
 
-- (Opsional): FileZilla, WinSCP, atau File Manager di hPanel (Hostinger).
+- Spesifikasi : Ram 2 GB+ (minimum 1 GB, tapi rawan swap kalau banyak container), Storage 10 GB+ SSD.
+
+- (Opsional): FileZilla, WinSCP (untuk transfer file ke server), Docker Compose file (.yml)
 
 **1. Download Homebox**
 
@@ -33,7 +35,7 @@ HomeBox adalah sebuah aplikasi web berbasis self-hosted yang digunakan untuk mel
 
 **2. Install Docker**
 
-*Jika di Windows atau macOS:*
+**Opsi 1:** Download Docker Desktop dari situs resminya (fitur GUI).
 
 - Unduh Docker Desktop dari https://www.docker.com/products/docker-desktop/.
 
@@ -41,10 +43,6 @@ HomeBox adalah sebuah aplikasi web berbasis self-hosted yang digunakan untuk mel
 <img width="1896" height="823" alt="image" src="https://github.com/user-attachments/assets/d4866863-7ff6-4ad6-a9c4-bbe8fd9acac2" />
 
 - Jalankan instalasi, lalu buka Docker Desktop setelah selesai.
-
-*Jika di Linux :*
-
-**Opsi 1:** Download Docker Desktop for Linux dari situs resminya (fitur GUI, sama seperti Windows/macOS).
 
 **Opsi 2:** Install langsung dari terminal:
 
@@ -138,6 +136,16 @@ sudo systemctl start docker
 4. Upload Folder Homebox ke Server
 
 - Kamu bisa unggah folder proyek ke server Hostinger lewat File Manager di hPanel, SSH langsung, atau FTP/SFTP (FileZilla/WinSCP). Pastikan folder ada di /root/homebox/ sebelum lanjut ke proses build Docker.
+
+  Misalnya, mengunggah folder ke server via SSH dengan cara :
+```
+scp -r <path_folder_lokal> <username>@<ip_server>:<path_tujuan_di_server>
+```
+
+- Setelah selesai, masuk ke server melalui SSH. Lalu cek hasil unggahan:
+```
+ls /root/homebox
+```
 
 5. Build dan Jalankan:
 ```
