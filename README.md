@@ -416,8 +416,8 @@ Homebox sudah mencakup semua fungsi penting seperti menambah, mengedit, menghapu
 Karena berbasis Docker, Homebox bisa diinstal di Windows, macOS, Linux, maupun di server cloud tanpa perlu menyesuaikan sistem operasi.
 
 ### Kekurangan Homebox
-1. **Membutuhkan koneksi internet saat instalasi pertama** : 
-Image Docker Homebox harus diunduh dari Docker Hub. Jadi, tanpa koneksi internet, proses instalasi awal tidak bisa dilakukan.
+1. **Proses development tidak pasti** : 
+ Proyek asli homebox sendiri berada di dalam arsip sehinggan pembaruan bergantung pada fork (salinan). Hal ini menimbulkan ketidakpastian pembaruan dalam jangka panjang.
 
 2. **Desain antarmuka masih sederhana** : 
 Walaupun mudah digunakan, tampilannya belum memiliki elemen visual modern seperti grafik statistik atau panel analisis data yang menarik.
