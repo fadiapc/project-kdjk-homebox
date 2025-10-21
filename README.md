@@ -417,7 +417,7 @@ Karena berbasis Docker, Homebox bisa diinstal di Windows, macOS, Linux, maupun d
 
 ### Kekurangan Homebox
 1. **Proses development tidak pasti** : 
- Proyek asli homebox sendiri berada di dalam arsip sehinggan pembaruan bergantung pada fork (salinan). Hal ini menimbulkan ketidakpastian pembaruan dalam jangka panjang.
+ Proyek asli homebox sendiri berada di dalam arsip sehingga pembaruan bergantung pada fork (salinan). Hal ini menimbulkan ketidakpastian pembaruan dalam jangka panjang.
 
 2. **Desain antarmuka masih sederhana** : 
 Walaupun mudah digunakan, tampilannya belum memiliki elemen visual modern seperti grafik statistik atau panel analisis data yang menarik.
